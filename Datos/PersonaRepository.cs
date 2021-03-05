@@ -23,16 +23,79 @@ namespace Datos
         public List<Persona> Consultar() 
         {
             List<Persona> personas = new List<Persona>();
+            FileStream file = new FileStream(ruta,FileMode.OpenOrCreate);
+            StreamReader lector = new StreamReader(file);
+            string linea = "";
+            while ((linea = lector.ReadLine())!=null)
+            {
+                Persona persona = MapearPersona(linea);
+                personas.Add(persona);
+            }
+            lector.Close();
+            file.Close();
             return personas;
         }
 
-        public void Eliminar(string identificacion) { }
+        private static Persona MapearPersona(string linea)
+        {
+            string[] datosPersona = linea.Split(';');
+            Persona persona = new Persona()
+            {
+                Identificacion = datosPersona[0],
+                Nombre = datosPersona[1],
+                Sexo = datosPersona[2],
+                Edad = Int32.Parse(datosPersona[3]),
+                Pulsacion = Convert.ToDecimal(datosPersona[4])
 
-        public void Modificar(Persona personaNuevo, string identificacion) 
-        { 
+            };
+            return persona;
+        }
+
+        public void Eliminar(string identificacion) 
+        {
+            List<Persona> personas = Consultar();
+            FileStream file = new FileStream(ruta,FileMode.Create);
+            file.Close();
+            foreach (var item in personas)
+            {
+                if (!item.Identificacion.Equals(identificacion))
+                {
+                    Guardar(item);
+                }
+            }
+        
         
         }
 
-        public void BuscarPorIdentificacion(string  identificacion) { }
+        public void Modificar(Persona personaNuevo, string identificacion) 
+        {
+            List<Persona> personas = Consultar();
+            FileStream file = new FileStream(ruta, FileMode.Create);
+            file.Close();
+            foreach (var item in personas)
+            {
+                if (!item.Identificacion.Equals(identificacion))
+                {
+                    Guardar(item);
+                }
+                else
+                {
+                    Guardar(personaNuevo);
+                }
+            }
+        }
+
+        public Persona BuscarPorIdentificacion(string  identificacion)
+        {
+
+            foreach (var item in Consultar())
+            {
+                if (item.Identificacion.Equals(identificacion))
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
     }
 }

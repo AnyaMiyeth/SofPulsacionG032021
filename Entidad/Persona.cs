@@ -8,6 +8,10 @@ namespace Entidad
 {
     public class Persona
     {
+        public Persona()
+        {
+
+        }
         public Persona(string identificacion, string nombre, string sexo, int edad)
         {
             Identificacion = identificacion;
@@ -37,5 +41,12 @@ namespace Entidad
                 Pulsacion = 0;
             }
         }
+
+
+        public override string ToString()
+        {
+            return $"Identificacion: {Identificacion} Nombre: {Nombre} Edad:{Edad} Sexo:{Sexo} Pulsación:{Pulsacion}"; ;
+        }
+
     }
 }

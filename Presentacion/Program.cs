@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Logica;
 namespace Presentacion
 {
     class Program
@@ -13,8 +13,8 @@ namespace Presentacion
         {
             string identificacion, nombre, sexo;
             int edad;
-           
 
+            PersonaService personaService = new PersonaService();
             Console.WriteLine("Digite la Identificacion:");
             identificacion=Console.ReadLine();
             Console.WriteLine("Digite El Nommbre:");
@@ -27,6 +27,24 @@ namespace Presentacion
             Persona persona = new Persona(identificacion,nombre,sexo,edad);
             persona.CalcularPulsacion();
             Console.WriteLine($"Su pulsacion es {persona.Pulsacion}");
+            Console.WriteLine($"/// Guardando desde Servicio///");
+            Console.WriteLine(personaService.Guardar(persona));
+
+            Console.WriteLine($"/// Consultando desde Servicio///");
+            ConsultaResponse response = personaService.Consultar();
+            if (!response.Error)
+            {
+                foreach (var item in response.Personas)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+            }
+            else
+            {
+                Console.WriteLine(response.Mensaje);
+            }
+
+
             Console.ReadKey();
 
         }
