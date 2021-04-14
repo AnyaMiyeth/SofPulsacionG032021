@@ -14,7 +14,6 @@ namespace Logica
         {
             personaRepository = new PersonaRepository();
         }
-
         public string Guardar(Persona persona) 
         {
 
@@ -34,9 +33,6 @@ namespace Logica
                 return "Se presentó el siguiente error:" + exception.Message;
             }
         }
-
-
-
         public ConsultaResponse Consultar() 
         {
             try
@@ -48,8 +44,6 @@ namespace Logica
                 return new ConsultaResponse("Se presentó el siguiente error:" + exception.Message);
             }
         }
-
-
         public string Eliminar(string identificacion) 
         {
 
@@ -68,8 +62,6 @@ namespace Logica
                 return "Se presentó el siguiente error:" + exception.Message;
             }
         }
-
-
         public string Modificar(Persona personaNueva,string identificacion)
         {
 
@@ -88,8 +80,6 @@ namespace Logica
                 return "Se presentó el siguiente error:" + exception.Message;
             }
         }
-
-
         public BusquedaReponse Buscar(string identificacion)
         {
             try
@@ -102,9 +92,7 @@ namespace Logica
             }
         }
 
-
     }
-
     public class ConsultaResponse 
     {
         public List<Persona> Personas { get; set; }

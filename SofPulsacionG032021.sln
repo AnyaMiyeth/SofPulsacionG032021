@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidad", "Entidad\Entidad.csproj", "{B5E293B9-EDB3-4BC0-A3C1-CD10A09320A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PulsacionGUI", "PulsacionGUI\PulsacionGUI.csproj", "{7230EA9B-A165-4EA5-BED5-5C3DD626D154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFPPulsaciones", "WFPPulsaciones\WFPPulsaciones.csproj", "{D9CCF78C-DBD8-4861-91B0-07F338B5C5BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B5E293B9-EDB3-4BC0-A3C1-CD10A09320A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5E293B9-EDB3-4BC0-A3C1-CD10A09320A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5E293B9-EDB3-4BC0-A3C1-CD10A09320A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7230EA9B-A165-4EA5-BED5-5C3DD626D154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7230EA9B-A165-4EA5-BED5-5C3DD626D154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7230EA9B-A165-4EA5-BED5-5C3DD626D154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7230EA9B-A165-4EA5-BED5-5C3DD626D154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9CCF78C-DBD8-4861-91B0-07F338B5C5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9CCF78C-DBD8-4861-91B0-07F338B5C5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9CCF78C-DBD8-4861-91B0-07F338B5C5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9CCF78C-DBD8-4861-91B0-07F338B5C5BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

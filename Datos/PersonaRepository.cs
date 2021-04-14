@@ -16,7 +16,7 @@ namespace Datos
         {
             FileStream file = new FileStream(ruta,FileMode.Append);
             StreamWriter escritor = new StreamWriter(file);
-            escritor.WriteLine($"{persona.Identificacion};{persona.Nombre};{persona.Sexo};{persona.Edad};{persona.Pulsacion}");
+            escritor.WriteLine(persona.Escribir());
             escritor.Close();
             file.Close();
         }
@@ -39,16 +39,13 @@ namespace Datos
         private static Persona MapearPersona(string linea)
         {
             string[] datosPersona = linea.Split(';');
-            Persona persona = new Persona()
-            {
-                Identificacion = datosPersona[0],
-                Nombre = datosPersona[1],
-                Sexo = datosPersona[2],
-                Edad = Int32.Parse(datosPersona[3]),
-                Pulsacion = Convert.ToDecimal(datosPersona[4])
-
-            };
-            return persona;
+            Persona persona = new Persona();
+            persona.Identificacion = datosPersona[0];
+            persona.Nombre = datosPersona[1];
+            persona.Sexo = datosPersona[2];
+            persona.Edad = Int32.Parse(datosPersona[3]);
+            persona.Pulsacion = Convert.ToDecimal(datosPersona[4]);
+           return persona;
         }
 
         public void Eliminar(string identificacion) 

@@ -24,7 +24,13 @@ namespace Presentacion
             Console.WriteLine("Digite la Edad:");
             edad =int.Parse( Console.ReadLine());
 
-            Persona persona = new Persona(identificacion,nombre,sexo,edad);
+            Persona persona = new Persona()
+            {
+                Identificacion = identificacion,
+                Nombre=nombre,
+                Sexo=sexo,
+                Edad=edad
+            };
             persona.CalcularPulsacion();
             Console.WriteLine($"Su pulsacion es {persona.Pulsacion}");
             Console.WriteLine($"/// Guardando desde Servicio///");
@@ -44,9 +50,14 @@ namespace Presentacion
                 Console.WriteLine(response.Mensaje);
             }
 
+            
+           
 
             Console.ReadKey();
 
+            
+            
+            
         }
     }
 }

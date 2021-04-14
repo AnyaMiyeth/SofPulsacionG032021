@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class Persona
+    public  class Persona
     {
+
+       
         public Persona()
         {
-
+           
         }
         public Persona(string identificacion, string nombre, string sexo, int edad)
         {
@@ -19,15 +21,12 @@ namespace Entidad
             Sexo = sexo;
             Edad = edad;
         }
-
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
         public string Sexo { get; set; }
         public int Edad { get; set; }
         public decimal Pulsacion { get; set; }
-
-        public void CalcularPulsacion() 
-        {
+        public void CalcularPulsacion() {
             if (Sexo.ToUpper().Equals("M"))
             {
                 Pulsacion = (210 - Edad) / 10;
@@ -41,8 +40,12 @@ namespace Entidad
                 Pulsacion = 0;
             }
         }
-
-
+          
+        public string Escribir()
+        {
+            return $"{Identificacion};{Nombre};{Sexo};{Edad};{Pulsacion}";
+        }
+        
         public override string ToString()
         {
             return $"Identificacion: {Identificacion} Nombre: {Nombre} Edad:{Edad} Sexo:{Sexo} Pulsación:{Pulsacion}"; ;
