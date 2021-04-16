@@ -66,18 +66,18 @@ namespace PulsacionGUI
             this.registroToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
             this.registroToolStripMenuItem.Text = "Registro";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
-            
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
             this.consultaToolStripMenuItem.Text = "Consulta";
+            this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(97, 45);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(97, 48);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // FrmPrincipal

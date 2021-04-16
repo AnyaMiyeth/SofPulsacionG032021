@@ -44,12 +44,14 @@ namespace PulsacionGUI
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtIdentificacion
             // 
-            this.TxtIdentificacion.Location = new System.Drawing.Point(334, 96);
+            this.TxtIdentificacion.Location = new System.Drawing.Point(385, 124);
             this.TxtIdentificacion.Name = "TxtIdentificacion";
             this.TxtIdentificacion.Size = new System.Drawing.Size(333, 38);
             this.TxtIdentificacion.TabIndex = 0;
@@ -57,7 +59,7 @@ namespace PulsacionGUI
             // LblIdentificación
             // 
             this.LblIdentificación.AutoSize = true;
-            this.LblIdentificación.Location = new System.Drawing.Point(145, 102);
+            this.LblIdentificación.Location = new System.Drawing.Point(196, 130);
             this.LblIdentificación.Name = "LblIdentificación";
             this.LblIdentificación.Size = new System.Drawing.Size(183, 32);
             this.LblIdentificación.TabIndex = 1;
@@ -66,7 +68,7 @@ namespace PulsacionGUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(213, 179);
+            this.label2.Location = new System.Drawing.Point(264, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 32);
             this.label2.TabIndex = 3;
@@ -74,7 +76,7 @@ namespace PulsacionGUI
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(334, 174);
+            this.TxtNombre.Location = new System.Drawing.Point(385, 202);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(333, 38);
             this.TxtNombre.TabIndex = 2;
@@ -82,7 +84,7 @@ namespace PulsacionGUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(246, 256);
+            this.label3.Location = new System.Drawing.Point(297, 284);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 32);
             this.label3.TabIndex = 5;
@@ -90,7 +92,7 @@ namespace PulsacionGUI
             // 
             // TxtEdad
             // 
-            this.TxtEdad.Location = new System.Drawing.Point(334, 252);
+            this.TxtEdad.Location = new System.Drawing.Point(385, 280);
             this.TxtEdad.Name = "TxtEdad";
             this.TxtEdad.Size = new System.Drawing.Size(333, 38);
             this.TxtEdad.TabIndex = 4;
@@ -98,7 +100,7 @@ namespace PulsacionGUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(248, 333);
+            this.label4.Location = new System.Drawing.Point(299, 361);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 32);
             this.label4.TabIndex = 6;
@@ -110,7 +112,7 @@ namespace PulsacionGUI
             this.CmbSexo.Items.AddRange(new object[] {
             "F",
             "M"});
-            this.CmbSexo.Location = new System.Drawing.Point(334, 330);
+            this.CmbSexo.Location = new System.Drawing.Point(385, 358);
             this.CmbSexo.Name = "CmbSexo";
             this.CmbSexo.Size = new System.Drawing.Size(333, 39);
             this.CmbSexo.TabIndex = 7;
@@ -118,7 +120,7 @@ namespace PulsacionGUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(188, 410);
+            this.label5.Location = new System.Drawing.Point(239, 438);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 32);
             this.label5.TabIndex = 9;
@@ -126,34 +128,34 @@ namespace PulsacionGUI
             // 
             // TxtPulsacion
             // 
-            this.TxtPulsacion.Location = new System.Drawing.Point(334, 409);
+            this.TxtPulsacion.Location = new System.Drawing.Point(385, 437);
             this.TxtPulsacion.Name = "TxtPulsacion";
             this.TxtPulsacion.Size = new System.Drawing.Size(333, 38);
             this.TxtPulsacion.TabIndex = 8;
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(662, 527);
+            this.BtnCancelar.Location = new System.Drawing.Point(661, 72);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(174, 86);
+            this.BtnCancelar.Size = new System.Drawing.Size(174, 130);
             this.BtnCancelar.TabIndex = 11;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(267, 527);
+            this.button1.Location = new System.Drawing.Point(266, 72);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 86);
+            this.button1.Size = new System.Drawing.Size(174, 130);
             this.button1.TabIndex = 12;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(468, 527);
+            this.button2.Location = new System.Drawing.Point(467, 72);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 86);
+            this.button2.Size = new System.Drawing.Size(174, 130);
             this.button2.TabIndex = 13;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = true;
@@ -161,7 +163,7 @@ namespace PulsacionGUI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PulsacionGUI.Properties.Resources.R6484c35e58cee9dd59e713d39b6ed2f9;
-            this.pictureBox1.Location = new System.Drawing.Point(749, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(1124, 102);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(530, 466);
             this.pictureBox1.TabIndex = 14;
@@ -171,7 +173,7 @@ namespace PulsacionGUI
             // BtnGuardar
             // 
             this.BtnGuardar.Image = global::PulsacionGUI.Properties.Resources.diskette_save_saveas_1514;
-            this.BtnGuardar.Location = new System.Drawing.Point(65, 527);
+            this.BtnGuardar.Location = new System.Drawing.Point(64, 72);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(174, 130);
             this.BtnGuardar.TabIndex = 10;
@@ -180,16 +182,26 @@ namespace PulsacionGUI
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.BtnGuardar);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.BtnCancelar);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(141, 690);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1177, 294);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // FrmRegistroPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1351, 702);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.BtnGuardar);
+            this.ClientSize = new System.Drawing.Size(1926, 1397);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtPulsacion);
             this.Controls.Add(this.CmbSexo);
@@ -204,6 +216,7 @@ namespace PulsacionGUI
             this.Name = "FrmRegistroPersona";
             this.Text = "Registro Persona";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +239,6 @@ namespace PulsacionGUI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -27,6 +27,7 @@ namespace WFPPulsaciones
         public MainWindow()
         {
             InitializeComponent();
+            personaService = new PersonaService();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -38,10 +39,18 @@ namespace WFPPulsaciones
                 //Edad = int.Parse(TxtEdad.Text),
                 //Sexo = CmbSexo.Text
             };
-            persona.CalcularPulsacion();
+           // persona.CalcularPulsacion();
             //TxtPulsacion.Text = persona.Pulsacion.ToString();
-            var mensaje = personaService.Guardar(persona);
-            MessageBox.Show(mensaje, "Información al Guardar", MessageBoxButton.OK, MessageBoxImage.Information);
+            var response = personaService.Consultar();
+            if (!response.Error)
+            {
+                dataGrid.ItemsSource = response.Personas;
+            }
+            else
+            {
+                MessageBox.Show(response.Mensaje, "Información al Guardar", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+           
         }
     }
 }

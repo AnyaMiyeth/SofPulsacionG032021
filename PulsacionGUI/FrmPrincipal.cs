@@ -23,5 +23,10 @@ namespace PulsacionGUI
         {
             new FrmRegistroPersona().Show();
         }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmConsultaPersona().Show();
+        }
     }
 }
