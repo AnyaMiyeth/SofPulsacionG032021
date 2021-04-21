@@ -22,15 +22,52 @@ namespace PulsacionGUI
 
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
-            var response=personaService.Consultar();
-            if (!response.Error)
+            var filtro = CmbFiltro.Text;
+            if (filtro.Equals(""))
             {
-                DtgPersona.DataSource = response.Personas;
+                MessageBox.Show("Escoja una opción para filtrar", "Error al Consultar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(response.Mensaje,"Error al Consultar",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                ConsultaResponse response;
+                
+                if (filtro=="Todos")
+                {
+                    response = personaService.Consultar();
+                }
+                else
+                {
+                    string tipo;
+                    tipo = MapearTipo(filtro);
+                    response = personaService.Consultar(tipo);
+                }
+               
+                if (!response.Error)
+                {
+                    DtgPersona.DataSource = response.Personas;
+                }
+                else
+                {
+                    MessageBox.Show(response.Mensaje, "Error al Consultar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
         }
+
+        private static string MapearTipo(string filtro)
+        {
+            string tipo;
+            if (filtro == "Hombres")
+            {
+                tipo = "M";
+            }
+            else
+            {
+                tipo = "F";
+            }
+
+            return tipo;
+        }
+
     }
 }

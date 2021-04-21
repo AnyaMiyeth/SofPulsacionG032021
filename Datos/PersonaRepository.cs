@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Entidad;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entidad;
 
 namespace Datos
 {
@@ -12,21 +10,21 @@ namespace Datos
     {
         string ruta = "Persona.txt";
 
-        public void Guardar(Persona persona) 
+        public void Guardar(Persona persona)
         {
-            FileStream file = new FileStream(ruta,FileMode.Append);
+            FileStream file = new FileStream(ruta, FileMode.Append);
             StreamWriter escritor = new StreamWriter(file);
             escritor.WriteLine(persona.Escribir());
             escritor.Close();
             file.Close();
         }
-        public List<Persona> Consultar() 
+        public List<Persona> Consultar()
         {
             List<Persona> personas = new List<Persona>();
-            FileStream file = new FileStream(ruta,FileMode.OpenOrCreate);
+            FileStream file = new FileStream(ruta, FileMode.OpenOrCreate);
             StreamReader lector = new StreamReader(file);
             string linea = "";
-            while ((linea = lector.ReadLine())!=null)
+            while ((linea = lector.ReadLine()) != null)
             {
                 Persona persona = MapearPersona(linea);
                 personas.Add(persona);
@@ -45,13 +43,13 @@ namespace Datos
             persona.Sexo = datosPersona[2];
             persona.Edad = Int32.Parse(datosPersona[3]);
             persona.Pulsacion = Convert.ToDecimal(datosPersona[4]);
-           return persona;
+            return persona;
         }
 
-        public void Eliminar(string identificacion) 
+        public void Eliminar(string identificacion)
         {
             List<Persona> personas = Consultar();
-            FileStream file = new FileStream(ruta,FileMode.Create);
+            FileStream file = new FileStream(ruta, FileMode.Create);
             file.Close();
             foreach (var item in personas)
             {
@@ -60,11 +58,11 @@ namespace Datos
                     Guardar(item);
                 }
             }
-        
-        
+
+
         }
 
-        public void Modificar(Persona personaNuevo, string identificacion) 
+        public void Modificar(Persona personaNuevo, string identificacion)
         {
             List<Persona> personas = Consultar();
             FileStream file = new FileStream(ruta, FileMode.Create);
@@ -82,7 +80,7 @@ namespace Datos
             }
         }
 
-        public Persona BuscarPorIdentificacion(string  identificacion)
+        public Persona BuscarPorIdentificacion(string identificacion)
         {
 
             foreach (var item in Consultar())
@@ -93,6 +91,24 @@ namespace Datos
                 }
             }
             return null;
+        }
+
+
+
+        public List<Persona> filtroSexo(string tipo)
+        {
+            var personas = Consultar();
+            return (from persona in personas
+                   where persona.Sexo.Equals(tipo)
+                   orderby persona.Edad ascending
+                   select persona).ToList();
+        }
+
+
+        public int ContarSexo(string tipo)
+        {
+            var personas = Consultar();
+            return personas.Count(p=>p.Sexo.Equals(tipo));
         }
     }
 }

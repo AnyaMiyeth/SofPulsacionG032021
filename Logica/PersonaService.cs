@@ -44,6 +44,18 @@ namespace Logica
                 return new ConsultaResponse("Se presentó el siguiente error:" + exception.Message);
             }
         }
+
+        public ConsultaResponse Consultar(string tipo)
+        {
+            try
+            {
+                return new ConsultaResponse(personaRepository.filtroSexo(tipo));
+            }
+            catch (Exception exception)
+            {
+                return new ConsultaResponse("Se presentó el siguiente error:" + exception.Message);
+            }
+        }
         public string Eliminar(string identificacion) 
         {
 
